@@ -1,2 +1,18 @@
-package br.edu.ifsul.cstsi.lpoo_orm_springdata_maven.model;public class Ingresso {
+package br.edu.ifsul.cstsi.lpoo_orm_springdata_maven.model;
+
+import jakarta.persistence.*;
+
+@Entity(name = "Ingressos") // Colocando nome da entidade para o JPA
+@Table(name = "ingressos") // Colocando nome para entidade/tabela no banco de dados
+
+public class Ingresso {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int tipo;
+
+    public int getIng() {
+        return 0;
+    }
+
+    @ManyToOne
+    private Sessao sessao;
 }
