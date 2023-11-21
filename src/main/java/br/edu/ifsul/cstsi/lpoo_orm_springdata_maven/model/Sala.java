@@ -6,9 +6,9 @@ import java.util.List;
 
 @Entity(name = "Sala")  // Colocando nome da entidade para o JPA
 @Table(name = "salas") // Colocando nome para entidade/tabela no banco de dados
-
 public class Sala {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private int nrosala;
     private int capacidade;
 
@@ -16,6 +16,6 @@ public class Sala {
         return 0;
     }
 
-    @OneToMany
+    @OneToMany(mappedBy = "sala")
     private List<Sessao> sessoes;
 }

@@ -4,11 +4,11 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
-@Entity(name = "Filmes") // Colocando nome da entidade para o JPA
+@Entity(name = "Filme") // Colocando nome da entidade para o JPA
 @Table(name = "filmes") // Colocando nome para entidade/tabela no banco de dados
-
 public class Filme {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String titulo;
     private double duracao;
 
@@ -16,7 +16,6 @@ public class Filme {
         return null;
     }
 
-    @OneToMany
+    @OneToMany(mappedBy = "filme")
     private List<Sessao> sessoes;
-
 }
