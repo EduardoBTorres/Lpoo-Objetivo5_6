@@ -16,9 +16,9 @@ public class HomeController {
 			System.out.print(
 				"""
 
-					1. Vender
-					2. Manter Produtos
-					3. Manter Clientes
+					1. Vender sala
+					2. Manter Sala
+					3. Cadastrar sala
 					4. Manter Itens
 					5. Manter Pedidos
 					Opção (Zero p/sair):\s""");

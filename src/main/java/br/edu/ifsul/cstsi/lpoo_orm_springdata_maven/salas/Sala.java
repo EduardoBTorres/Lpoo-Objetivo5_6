@@ -16,13 +16,22 @@ import java.util.List;
 public class Sala {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private int nrosala;
-    private int capacidade;
+    private Integer nrosala;
+    private Integer capacidade;
 
     public int conSala(){
         return 0;
     }
 
-    @OneToMany(mappedBy = "sala")
+    @OneToMany(mappedBy = "sala", fetch = FetchType.LAZY)
     private List<Sessao> sessoes;
+
+    @Override
+    public String toString() {
+        return "Sala{" +
+                "id=" + id +
+                ", nrosala=" + nrosala +
+                ", capacidade=" + capacidade +
+                '}';
+    }
 }
